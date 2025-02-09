@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko SAF</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: maroon;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .header img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .header h1 {
+            color: white;
+            margin: 0;
+            flex-grow: 1;
+            font-weight: bold;
+        }
+        .header .cart {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+        .search-bar {
+            background-color: #b03060;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 70px;
+            z-index: 1000;
+        }
+        .search-bar input {
+            padding: 5px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+        }
+        .search-bar button {
+            padding: 5px 10px;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .product {
+            margin-top: 150px;
+            text-align: center;
+        }
+        .product img {
+            width: 87%;
+            height: auto;
+        }
+        .price {
+            font-size: 20px;
+            color: maroon;
+        }
+        .price del {
+            color: gray;
+        }
+        .description {
+            margin-top: 20px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .description button {
+            background-color: #ff69b4;
+            border: none;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            width: 100%;
+        }
+        .description .content {
+            display: none;
+            background-color: #ffc0cb;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            text-align: left;
+        }
+        .buy-now {
+            margin-top: 20px;
+        }
+        .buy-now button {
+            background-color: maroon;
+            border: none;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            width: 100%;
+        }
+        .footer {
+            background-color: #fffacd;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 1000;
+            text-align: center;
+        }
+        .footer .category {
+            background-color: #b03060;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            width: 85%;
+            margin: 0 auto;
+        }
+        .footer .category-content {
+            display: none;
+            background-color: #ffc0cb;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            width: 85%;
+            margin: 0 auto;
+        }
+        .footer .category-content button {
+            background-color: #b03060;
+            border: none;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+            margin: 5px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .shopping-form {
+            display: none;
+            background-color: #ffc0cb;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+        .shopping-form label {
+            display: block;
+            margin: 10px 0;
+        }
+        .shopping-form input[type="checkbox"], .shopping-form input[type="number"] {
+            margin-right: 10px;
+        }
+        .payment-details {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .payment-details p {
+            margin: 5px 0;
+        }
+        .checkout-button {
+            background-color: maroon;
+            border: none;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://affiliate035.wordpress.com/wp-content/uploads/2025/01/20250113_192723.png?w=768" alt="Logo Toko SAF">
+        <h1>TOKO SAF</h1>
+        <img src="https://SAFF35.github.io/Keranjang" alt="Keranjang" class="cart">
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Cari...">
+        <button>Cari</button>
+    </div>
+    <div class="product">
+        <img src="https://affiliate035.wordpress.com/wp-content/uploads/2025/01/20250124_235629.png?w=1024" alt="Produk">
+        <div class="price">
+            <del>Rp 100.000</del> Rp 50.000
+        </div>
+        <div class="description">
+            <button onclick="toggleDescription()">Deskripsi</button>
+            <div class="content" id="descriptionContent">
+                Baik kakak saya jelaskan kembali ya kak, disini kakak bertugas sebagai seller yang di mana jika ada pesanan yang masuk di toko kakak nanti nya kakak harus melakukan pembayaran harga gudang nya dan jika sudah membayar harga gudang dari pesanan nya maka saya akan pandu kakak untuk melakukan pengiriman pesanan nya jika pesanan sudah di kirimkan ke pelanggan.
+            </div>
+        </div>
+        <div class="buy-now">
+            <button onclick="toggleShoppingForm()">Belanja</button>
+            <div class="shopping-form" id="shoppingForm">
+                <label>
+                    <input type="checkbox"> Kuning
+                </label>
+                <label>
+                    <input type="checkbox"> Coklat
+                </label>
+                <label>
+                    <input type="checkbox"> Merah
+                </label>
+                <label>
+                    <input type="checkbox"> M Rp 50.000
+                </label>
+                <label>
+                    <input type="checkbox"> L Rp 52.000
+                </label>
+                <label>
+                    <input type="checkbox"> XL Rp 54.000
+                </label>
+                <label>
+                    <input type="checkbox"> XXL Rp 56.000
+                </label>
+                <label>
+                    <input type="checkbox"> Proteksi Kerusakan Rp 8.000
+                </label>
+                <label>
+                    <input type="checkbox"> Reguler Rp 8.000
+                </label>
+                <label>
+                    <input type="checkbox"> Instan Rp 25.000
+                </label>
+                <label>
+                    Jumlah: <input type="number" min="1" max="30">
+                </label>
+                <div class="payment-details">
+                    <p>Subtotal Produk: Rp <span id="subtotalProduk">0</span></p>
+                    <p>Subtotal Pengiriman: Rp <span id="subtotalPengiriman">0</span></p>
+                    <p>Biaya Layanan: Rp 3.000</p>
+                    <p>Proteksi Kerusakan: Rp <span id="proteksiKerusakan">0</span></p>
+                    <p>Total Pembayaran: Rp <span id="totalPembayaran">0</span></p>
+                </div>
+                <button class="checkout-button" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="category" onclick="toggleCategory()">Kategori</div>
+        <div class="category-content" id="categoryContent">
+            <button onclick="window.location.href='https://SAFF35.github.io/Fashion'">Fashion</button>
+            <button onclick="window.location.href='https://SAFF35.github.io/Elektronik'">Elektronik</button>
+            <button onclick="window.location.href='https://SAFF35.github.io/HP'">HP</button>
+            <button onclick="window.location.href='https://SAFF35.github.io/Jasa'">Jasa</button>
+            <button onclick="window.location.href='https://SAFF35.github.io/Ebook'">Ebook</button>
+            <button onclick="window.location.href='https://SAFF35.github.io/Kecantikan'">Kecantikan</button>
+        </div>
+    </div>
+    <script>
+        function toggleDescription() {
+            var content = document.getElementById("descriptionContent");
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+        function toggleCategory() {
+            var content = document.getElementById("categoryContent");
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+        function toggleShoppingForm() {
+            var form = document.getElementById("shoppingForm");
+            form.style.display = form.style.display === "none" ? "block" : "none";
+        }
+        function checkout() {
+            var subtotalProduk = document.getElementById("subtotalProduk").innerText;
+            var subtotalPengiriman = document.getElementById("subtotalPengiriman").innerText;
+            var proteksiKerusakan = document.getElementById("proteksiKerusakan").innerText;
+            var totalPembayaran = document.getElementById("totalPembayaran").innerText;
+            var message = "Hai Admin, saya mau beli Produk ini:\n" +
+                          "Subtotal Produk: Rp " + subtotalProduk + "\n" +
+                          "Subtotal Pengiriman: Rp " + subtotalPengiriman + "\n" +
+                          "Biaya Layanan: Rp 3.000\n" +
+                          "Proteksi Kerusakan: Rp " + proteksiKerusakan + "\n" +
+                          "Total Pembayaran: Rp " + totalPembayaran;
+            window.open("https://wa.me/6289522704503?text=" + encodeURIComponent(message), "_blank");
+        }
+    </script>
+</body>
+</html>
